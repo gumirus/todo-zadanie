@@ -13,7 +13,7 @@ interface FooterProps {
 
   return (
   <footer style = {footerStyle}>
-  <span>{activeTodos} item{activeTodos !== 1?'s': ''} left</span>
+  <span className='itemsLeft'>{activeTodos} item{activeTodos !== 1?'s': ''} left</span>
   <div style = {filterStyle}>
   <button onClick = {() => onFilterChange('all') }>All</button>
   <button onClick = {() => onFilterChange('active') }>Active</button>

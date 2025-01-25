@@ -19,7 +19,7 @@ const App: React.FC = () => {
 
   return (
     <div className='container'>
-      <h1>todos</h1>
+      <p>todos</p>
       <TodoInput onAddTodo={addTodo} />
       <TodoList todos={filteredTodos} onToggleTodo={toggleTodo} onDeleteTodo={deleteTodo} />
       <Footer
