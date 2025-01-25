@@ -1,12 +1,20 @@
 import { useState } from 'react';
-import { Todo } from '../types/Todo';
+export interface Todo {
+  id: number;
+  text: string;
+  completed: boolean;
+}
 
 const useTodos = () => {
-  const [todos, setTodos] = useState<Todo[]>([]);
+  const [todos, setTodos] = useState<Todo[]>([
+    { id: 1, text: 'Тестовое задание', completed: false },
+    { id: 2, text: 'Прекрасный код', completed: true }, 
+    { id: 3, text: 'Покрытие тестами', completed: false }
+  ]);
 
   const addTodo = (text: string) => {
     const newTodo: Todo = {
-      id: Date.now(),
+      id: Date.now(), 
       text,
       completed: false,
     };
@@ -14,15 +22,13 @@ const useTodos = () => {
   };
 
   const toggleTodo = (id: number) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo
-      )
-    );
+    setTodos(todos.map(todo =>
+      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+    ));
   };
 
   const deleteTodo = (id: number) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+    setTodos(todos.filter(todo => todo.id !== id));
   };
 
   return { todos, addTodo, toggleTodo, deleteTodo };

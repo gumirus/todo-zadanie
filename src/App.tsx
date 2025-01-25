@@ -8,7 +8,7 @@ const App: React.FC = () => {
   const { todos, addTodo, toggleTodo, deleteTodo } = useTodos();
 
   return (
-    <div>
+    <div className='container'>
       <h1>todos</h1>
       <TodoInput onAddTodo={addTodo} />
       <TodoList todos={todos} onToggleTodo={toggleTodo} onDeleteTodo={deleteTodo} />
