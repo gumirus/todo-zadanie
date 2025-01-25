@@ -8,13 +8,13 @@ export interface Todo {
 const useTodos = () => {
   const [todos, setTodos] = useState<Todo[]>([
     { id: 1, text: 'Тестовое задание', completed: false },
-    { id: 2, text: 'Прекрасный код', completed: true }, 
+    { id: 2, text: 'Прекрасный код', completed: true },
     { id: 3, text: 'Покрытие тестами', completed: false }
   ]);
 
   const addTodo = (text: string) => {
     const newTodo: Todo = {
-      id: Date.now(), 
+      id: Date.now(),
       text,
       completed: false,
     };
@@ -31,7 +31,11 @@ const useTodos = () => {
     setTodos(todos.filter(todo => todo.id !== id));
   };
 
-  return { todos, addTodo, toggleTodo, deleteTodo };
+  const clearCompleted = () => {
+    setTodos(todos.filter(todo => !todo.completed));
+  };
+
+  return { todos, addTodo, toggleTodo, deleteTodo, clearCompleted };
 };
 
 export default useTodos;

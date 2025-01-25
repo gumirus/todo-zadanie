@@ -7,12 +7,12 @@ interface TodoItemProps {
   onDeleteTodo: (id: number) => void;
 }
 
-const TodoItem: React.FC<TodoItemProps> = ({ todo, onToggleTodo, onDeleteTodo }) => {
+const TodoItem: React.FC<TodoItemProps> = ({ todo, onToggleTodo }) => {
   return (
     <li className="todoItem">
       <div
         onClick={() => onToggleTodo(todo.id)}
-        className={`checkbox ${todo.completed ? 'completed' : ''}`}  
+        className={`checkbox ${todo.completed ? 'completed' : ''}`}
       >
         <span className={`checkmark ${todo.completed ? 'show' : ''}`}>
           ✔
@@ -20,13 +20,10 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, onToggleTodo, onDeleteTodo })
       </div>
       <span
         onClick={() => onToggleTodo(todo.id)}
-        className={`todoText ${todo.completed ? 'completed' : ''}`}  
+        className={`todoText ${todo.completed ? 'completed' : ''}`}
       >
         {todo.text}
       </span>
-      <button onClick={() => onDeleteTodo(todo.id)} className="deleteButton">
-        Delete
-      </button>
     </li>
   );
 };
