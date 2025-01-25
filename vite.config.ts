@@ -2,8 +2,8 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
-export default defineConfig(
-. base: '/dodo-zadanie/',
+export default defineConfig({
+  base: '/dodo-zadanie/',
   plugins: [react()],
   build: {
     outDir: 'dist',
