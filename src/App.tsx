@@ -4,7 +4,6 @@ import TodoList from './components/TodoList';
 import Footer from './components/Footer';
 import useTodos from './hooks/useTodos';
 
-
 const App: React.FC = () => {
   const { todos, addTodo, toggleTodo, deleteTodo } = useTodos();
 
