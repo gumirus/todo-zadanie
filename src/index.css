@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: 'Smooch Sans';
-  src: url('/public/font/Smooch_Sans/static/SmoochSans-Thin.ttf') format('truetype');
+  src: url('/font/Smooch_Sans/static/SmoochSans-Thin.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -172,5 +172,6 @@ footer button:hover {
 }
 
 .itemsLeft {
-  color: rgb(150, 147, 147);;
+  color: rgb(150, 147, 147);
+  ;
 }
