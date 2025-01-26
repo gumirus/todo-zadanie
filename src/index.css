@@ -164,7 +164,12 @@ footer button {
 }
 
 footer button:hover {
-  background-color: var(--grey)
+  background-color: var(--grey);
+}
+
+button:focus,
+button.active {
+  border: 1px solid #f4abab;
 }
 
 .clearCompleted {
